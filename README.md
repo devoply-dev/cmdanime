@@ -1,7 +1,7 @@
 
 # Project Title
 
-This project is for Japanese Anime lovers to easily download Animes without interuption e.g ads
+This project is for Japanese Anime lovers to easily download Animes without interuption e.g ads and prevent clickbait
 
 
 ## Installation
@@ -42,5 +42,4 @@ How to use the script
 3. read thru the information printed out after any prompt
 ## Authors
 
-- [@haxsys](https://github.com/devoply-dev)
-- [@Arinze](pentacker@gmail.com)
+- [@Haxsys](https://github.com/devoply-dev)
