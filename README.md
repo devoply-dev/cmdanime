@@ -43,3 +43,4 @@ How to use the script
 ## Authors
 
 - [@haxsys](https://github.com/devoply-dev)
+- [@Arinze](pentacker@gmail.com)
