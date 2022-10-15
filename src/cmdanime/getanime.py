@@ -36,6 +36,7 @@ n()
 
 
 def animepahe_search():
+    n()
     anime = str(input("Enter full Anime Name to look for : "))
     print()
     print(f'You searched for {anime}')
@@ -97,7 +98,7 @@ def animepahe_search():
     pick_index = int(input("Out of the results pick the Index of anime u want : ")) 
     
     n()
-    
+    global animepicked
     animepicked = search_response_dict['data'][pick_index]['title']
     
     print(f'You picked {animepicked}')
@@ -136,6 +137,7 @@ def animepahe_search():
 
 
 def episodes_stream_page():
+    global streampage_episode
     # using return value of the search function to get the page
     jsonpage = animepahe_search()
     
@@ -194,7 +196,7 @@ def episodes_stream_page():
 n()
 n()
 
-driverchoice = str(input("Enter your browser of choice e.g chrome/firefox"))
+driverchoice = str(input("Enter your browser of choice e.g chrome/firefox : "))
 
 if driverchoice.lower() == "chrome":
     option = webdriver.ChromeOptions()
@@ -252,9 +254,32 @@ def AnimeDownloader():
     ad = driver.find_element(By.XPATH,'/html/body/div[2]/a')
 
     ad.click()
+    
+    n()
+    
+    down = str(input("Do you want to still download the anime [y or n] : "))
+    
+    if down.lower() == 'y':
+        element.click()
+        n()
+        print(f'You are Downloading Episode {streampage_episode} of {animepicked} NOW!!!!!!!')
+        n()
+        print("check the Anime file in your specified downloads folder")
+        
+    elif down.lower() == 'yes':
+        element.click()
+        n()
+        print(f'You are Downloading Episode {streampage_episode} of {animepicked} NOW!!!!!!!')
+        n()
+        print("check the Anime file in your specified downloads folder")
 
-    element.click()
-
+    else:
+        n()
+        print("You chose to not download just run the script again if you change your mind")
+        
+        driver.quit()
+        
+        exit()
 
 
 
