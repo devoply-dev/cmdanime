@@ -191,14 +191,34 @@ def episodes_stream_page():
 
 
 #--------------------------------------------Selenium driver initialization---------------------------
+n()
+n()
 
-option = webdriver.ChromeOptions()
+driverchoice = str(input("Enter your browser of choice e.g chrome/firefox"))
 
-option.headless = False
+if driverchoice.lower() == "chrome":
+    option = webdriver.ChromeOptions()
 
-option.add_experimental_option("detach", True)
+    option.headless = True
 
-driver = webdriver.Chrome(options=option)
+    option.add_experimental_option("detach", True)
+
+    driver = webdriver.Chrome(options=option)
+    
+elif driverchoice.lower() == "firefox":
+    options = Options()
+    options.headless = True
+    driver = webdriver.Firefox(options=options)
+
+else:
+    option = webdriver.ChromeOptions()
+
+    option.headless = True
+
+    option.add_experimental_option("detach", True)
+
+    driver = webdriver.Chrome(options=option)
+
 
 #--------------------------------------------------------------------------------------------------------
 
